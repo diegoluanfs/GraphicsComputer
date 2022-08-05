@@ -1,35 +1,10 @@
-﻿/*
-Desenvolva um programa que leia pelo teclado os valores x, y e z de um vetor de 3 dimensões (ou preencha com valores aleatórios). 
-Em seguida, apresente ao usuário um menu com as seguintes opções:
-
-Calcular o tamanho do vetor;
-Normalizar o vetor, apresentando o vetor resultante da normalização;
-Adicionar outro vetor ao que foi lido anteriormente, lendo os valores x, y e z deste novo vetor;
-Subtrair outro vetor ao que foi lido anteriormente, lendo os valores x, y e z deste novo vetor;
-Ler o valor de um escalar e realizar a multiplicação do mesmo pelo vetor, mostrando o vetor resultante;
-Ler o valor de um escalar e realizar a divisão do mesmo pelo vetor, mostrando o vetor resultante;
-Calcular o produto escalar do vetor lido anteriormente por outro vetor, lendo os valores x, y e z deste novo vetor e mostrando o resultado na tela.
-Desenvolva um programa que leia pelo teclado os valores de uma matriz 3x3 (ou preencha com valores aleatórios), e então apresente um menu com as seguintes opções:
-
-Adição e subtração de outra matriz, lendo os valores dessa outra matriz 3x3 e mostrando o resultado na tela;
-Multiplicação e Divisão de um escalar lido pelo teclado;
-Multiplicação da matriz por um vetor de 3 elementos, este lido pelo teclado;
-Multiplicação da matriz por outra matriz 3x3, esta lida pelo teclado;
-Apresentar a transposta da matriz lida inicialmente.
- */
-
+﻿
 int[] vector = new int[3];
 int opcao;
 vector = CriaVetor();
 Console.Clear();
 opcao = ChamaMenu();
 OpcaoEscolhida(opcao, vector);
-
-//for(int i = 0; i < vector.Length; i++)
-//{
-//    Console.WriteLine(vector[i]);
-//    vector[i] = i;
-//}
 
 void OpcaoEscolhida(int opcao, int[] vector)
 {
@@ -66,16 +41,46 @@ void OpcaoEscolhida(int opcao, int[] vector)
             Console.WriteLine("A soma dos vetores resultou em: [" + vector4[0] + "," + vector4[1] + "," + vector4[2] + "]");
             break;
         case 4:
-            Console.WriteLine("Case 4");
+            Console.WriteLine("Bora criar mais um vetor...");
+            int[] vector5, vector6 = new int[3];
+            vector5 = CriaVetor();
+            Console.Clear();
+            Console.WriteLine("Agora, bora subtrair esse vetor. Só um pouco, perdi minha calculadora...");
+            Thread.Sleep(4000);
+            vector6[0] = vector[0] - vector5[0];
+            vector6[1] = vector[1] - vector5[1];
+            vector6[2] = vector[2] - vector5[2];
+            Console.WriteLine("A subtração dos vetores resultou em: [" + vector6[0] + "," + vector6[1] + "," + vector6[2] + "]");
             break;
         case 5:
-            Console.WriteLine("Case 5");
+            Console.WriteLine("Entre com o valor de um escalar: ");
+            int escalar = Int32.Parse(Console.ReadLine());
+            vector[0] = vector[0] * escalar;
+            vector[1] = vector[1] * escalar;
+            vector[2] = vector[2] * escalar;
+            Console.WriteLine("A multiplicação do vetor pelo escalar resultou em: [" + vector[0] + "," + vector[1] + "," + vector[2] + "]");
             break;
         case 6:
-            Console.WriteLine("Case 6");
+            Console.WriteLine("Entre com o valor de um escalar: ");
+            int escalarDividir = Int32.Parse(Console.ReadLine());
+            vector[0] = vector[0] / escalarDividir;
+            vector[1] = vector[1] / escalarDividir;
+            vector[2] = vector[2] / escalarDividir;
+            Console.WriteLine("A divisão do vetor pelo escalar resultou em: [" + vector[0] + "," + vector[1] + "," + vector[2] + "]");
             break;
         case 7:
-            Console.WriteLine("Case 7");
+            Console.WriteLine("Meeee, nem era pra escolher essa função... Deixa eu ver aqui se consigo resolver...");
+            Thread.Sleep(5000);
+            Console.Clear();
+            Console.WriteLine("Suador, vou te dizer. Mas ok, achei um livro aqui ...");
+            int[] vector7, vector8 = new int[3];
+            vector7 = CriaVetor();
+            Console.Clear();
+            vector8[0] = vector[0] + vector7[0];
+            vector8[1] = vector[1] + vector7[1];
+            vector8[2] = vector[2] + vector7[2];
+            var sum = vector8[0] + vector8[1] + vector8[2];
+            Console.WriteLine("O produto escalar entre os vetores é: " + sum);
             break;
         default:
             Console.WriteLine("Opção inválida.");
