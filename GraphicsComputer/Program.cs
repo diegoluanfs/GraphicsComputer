@@ -287,10 +287,10 @@ int ChamaMenuMatriz()
         else
         {
             Console.Clear();
-            Console.WriteLine("1 - Calcular o tamanho do vetor; \n2 - Normalizar o vetor;\n3 - Adicionar outro vetor ao que foi lido anteriormente;" +
-                "\n4 - Subtrair outro vetor ao que foi lido anteriormente;\n5 - Multiplicar por um escalar;\n6 - Dividir por um escalar;" +
-                "\n7 - Calcular o produto escalar do vetor lido anteriormente por outro vetor;\n 0 - Sair.");
-            opcaoIn = Console.ReadLine();
+            Console.WriteLine("1 - Adição de outra matriz\n2 - Subtração de outra matriz\n" +
+                        "3 - Multiplicação da matriz por um escalar\n4 - Divisão da matriz por um escalar\n" +
+                        "5 - Multiplicação da matriz por um vetor\n6 - Multiplicação da matriz por outra matriz\n" +
+                        "7 - Gerar a matriz transposta\n 0 - Sair.");
         }
     } while (!res);
     return opcao;
