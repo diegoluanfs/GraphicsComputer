@@ -8,10 +8,10 @@ namespace GraphicsComputer
 {
     public class Operacoes
     {
-        public static double NormaDoVetor(int opcao, int[] vector)
+        public static double NormaDoVetor(int opcao, int[] vetor)
         {
             double tamanho;
-            return tamanho = Math.Sqrt(vector[0] * vector[0] + vector[1] * vector[1] + vector[2] * vector[2]);
+            return tamanho = Math.Sqrt(vetor[0] * vetor[0] + vetor[1] * vetor[1] + vetor[2] * vetor[2]);
         }
         public static int[,] SomaMatrizes(int[,] matriz, int[,] matriz2)
         {
@@ -36,34 +36,6 @@ namespace GraphicsComputer
                 }
             }
             return matrizResp;
-        }
-        public static int[,] CriaMatriz()
-        {
-            int[,] matriz = new int[3, 3];
-
-            for (int i = 0; i < 3; i++)
-            {
-                for (int j = 0; j < 3; j++)
-                {
-                    Menus.Enunciado("Entre com o valor da posição(" + i + " , " + j + "): ");
-                    matriz[i, j] = Int32.Parse(Console.ReadLine());
-                }
-            }
-            return matriz;
-        }
-        public static int[,] CriaMatrizIdentidade()
-        {
-            int[,] matriz = new int[3, 3];
-
-            for (int i = 0; i < 3; i++)
-            {
-                for (int j = 0; j < 3; j++)
-                {
-                    if(i == j)
-                    matriz[i, j] = 1;
-                }
-            }
-            return matriz;
         }
     }
 }
